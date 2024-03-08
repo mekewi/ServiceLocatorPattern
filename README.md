@@ -8,4 +8,5 @@ you have 3 scopes you choose between them
 
 # How To use it 
 ServiceManager.Register<IAudioManager>(ServiceScopeType.Global, this);
+
 ServiceManager.GetService<IAudioManager>().PlayAudio();
