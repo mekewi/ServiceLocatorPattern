@@ -1,0 +1,11 @@
+{
+  "name": "com.rashad.designpattern.servicelocator",
+  "displayName": "Service Locator",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "author": {
+    "name": "Mohamed Rashad",
+    "email": "m.rashad.sm@gmail.com",
+  },
+}
