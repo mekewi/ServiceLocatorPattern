@@ -59,7 +59,6 @@ namespace ServiceLocatorPattern
             var newServiceLocatorGameobject = new GameObject(k_sceneServiceLocatorName);
             var newServiceLocator = newServiceLocatorGameobject.AddComponent<ServiceLocator>();
             newServiceLocator.serviceScope = ServiceScopeType.Scene;
-            newServiceLocator.addServiceAsChild = true;
             SceneManager.MoveGameObjectToScene(newServiceLocatorGameobject, scene);
             return newServiceLocator;
         }

@@ -7,7 +7,7 @@ namespace ServiceLocatorPattern
     public class ServiceLocator : MonoBehaviour
     {
         public ServiceScopeType serviceScope;
-        public bool addServiceAsChild;
+        public bool dontDestroy;
         readonly Dictionary<Type, object> services = new Dictionary<Type, object>();
         public IEnumerable<object> RegisteredServices => services.Values;
         public bool TryGet<T>(out T service) where T : class
@@ -56,12 +56,12 @@ namespace ServiceLocatorPattern
         }
         private void AfterServiceAdded<T>(T serviceType) 
         {
-            if (addServiceAsChild)
+            if (dontDestroy)
             {
                 if (serviceType.GetType().IsSubclassOf(typeof(MonoBehaviour)))
                 {
                     var serviceMonoBehaviour = serviceType as MonoBehaviour;
-                    serviceMonoBehaviour.transform.SetParent(transform);
+                    DontDestroyOnLoad(serviceMonoBehaviour);
                 }
             }
         }

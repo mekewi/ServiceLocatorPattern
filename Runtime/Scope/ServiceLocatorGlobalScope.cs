@@ -17,7 +17,7 @@ namespace ServiceLocatorPattern
             serviceLocator = container.GetComponent<ServiceLocator>();
             serviceLocator.DontDestory();
             serviceLocator.serviceScope = ServiceScopeType.Global;
-            serviceLocator.addServiceAsChild = true;
+            serviceLocator.dontDestroy = true;
             serviceLocatorFounded = serviceLocator;
             return true;
         }
