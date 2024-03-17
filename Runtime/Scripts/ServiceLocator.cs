@@ -61,7 +61,7 @@ namespace ServiceLocatorPattern
                 if (serviceType.GetType().IsSubclassOf(typeof(MonoBehaviour)))
                 {
                     var serviceMonoBehaviour = serviceType as MonoBehaviour;
-                    DontDestroyOnLoad(serviceMonoBehaviour);
+                    DontDestroyOnLoad(serviceMonoBehaviour.gameObject);
                 }
             }
         }
